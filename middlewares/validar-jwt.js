@@ -14,7 +14,7 @@ const validarJWT = (req, res = response, next) => {
 
     try {
         const payload = jwt.verify(token, process.env.SECRET_JWT);
-        req.uid = payload.uid
+        req.uid = payload.uid //TODO aqui estamos creando estas variable que la vamos a pasar como req
         req.name = payload.name
         
     } catch (error) {
